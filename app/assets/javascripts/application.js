@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
+//= jquery
 
 $(document).ready(function() {
   console.log("ready")
