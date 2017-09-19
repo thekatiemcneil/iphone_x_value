@@ -39,7 +39,7 @@ function returnAnswer(userInput){
     return "the iPhone X is worth " + Math.floor(hours(userInput)) + " hours of your life."
   }
   else {
-    return "thats not a number!"
+    return "thats not a number"
   }
 }
 
