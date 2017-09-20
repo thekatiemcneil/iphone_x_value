@@ -7,4 +7,4 @@ JQuery
 
 No data is persisted in this application, so no database was used.
 
-View it in action:
+View it in action: https://iphonex-value.herokuapp.com/
