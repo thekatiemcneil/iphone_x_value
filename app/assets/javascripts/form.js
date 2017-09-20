@@ -23,23 +23,44 @@ $(document).ready(function() {
   })
 });
 
-function isInt(value) {
-  return !isNaN(value) &&
-         parseInt(Number(value)) == value &&
-         !isNaN(parseInt(value, 10));
-}
+function convertString(input){
+  if (input.includes(".")) {
+    return parseFloat(input);
+  }
+  else {
+    return parseInt(input);
+  }
+};
+
+function isFloat(n){
+    return n === +n && n !== (n|0);
+};
+
+function isInteger(n){
+    return n === +n && n === (n|0);
+};
 
 function hours(wage){
-  const wageInt = parseInt(wage);
-  return (999 / wageInt);
-}
+  return (999 / wage);
+};
+
+function roundResult(num){
+  var partial = (num - Math.floor(num))*100;
+  if (partial >= 50) {
+    return Math.ceil(num);
+  }
+  else {
+    return Math.floor(num);
+  }
+};
 
 function returnAnswer(userInput){
-  if (isInt(userInput)) {
-    return "the iPhone X is worth " + Math.floor(hours(userInput)) + " hours of your life."
+  var convertedInput = convertString(userInput);
+  if (isInteger(convertedInput) || isFloat(convertedInput)) {
+    return "the iPhone X is worth " + roundResult(hours(convertedInput)) + " hours of your life."
   }
   else {
     return "thats not a number"
   }
-}
+};
 
